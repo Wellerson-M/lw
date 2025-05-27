@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aluguel de Carros</title>
+    <link rel="icon" href="assests/Logo-LW.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+    body {
+        font-family: sans-serif;
+    }
+
+    .card {
+        border-color: rgb(23, 60, 136);
+    }
+</style>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark mb-1" style="background-color: rgb(40, 79, 158);">
+        <div class="container">
+            <a class="navbar-brand" href="Index.html"><img src="assests/Logo-LW.png" width="80px" height="80px"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarNav">
+                <ul class="navbar-nav  px-5">
+                    <li class="nav-item"><a class="nav-link text-white" href="Index.html">Início</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="Reserva.html">Reserva</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button"
+                            data-bs-toggle="dropdown">Veículos</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Veiculos.html?categoria=compacto">Compactos</a></li>
+                            <li><a class="dropdown-item" href="Veiculos.html?categoria=sedan">Sedans</a></li>
+                            <li><a class="dropdown-item" href="Veiculos.html?categoria=suv">SUVs</a></li>
+                            <li><a class="dropdown-item" href="Veiculos.html?categoria=pickup">Pickup</a></li>
+                            <li><a class="dropdown-item" href="Veiculos.html?categoria=utilitario">Utilitário</a></li>
+
+                            <li><a class="dropdown-item" href="Veiculos.html">Todos os veículos</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+
+                <form class="d-flex" role="search" action="Veiculos.html" method="GET" style="width: 40%;">
+                    <div class="input-group">
+                        <span class="input-group-text">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-search" viewBox="0 0 16 16">
+                                <path
+                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                            </svg>
+                        </span>
+                        <input type="text" name="busca" class="form-control" placeholder="Buscar veículo">
+                    </div>
+                </form>
+
+
+                <ul class="navbar-nav ms-auto login">
+                    <li class="text-white d-flex align-items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            class="bi bi-person" viewBox="0 0 16 16">
+                            <path
+                                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
+                        </svg>
+                    </li>
+                    <li class="nav-item">
+                        <a href="http://localhost:3000/login.html" class="m-2 nav-link text-white">Entrar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="http://localhost:3000/cadastro.html" class="m-2 nav-link text-white">Criar conta</a>
+                    </li>
+                </ul>
+
+
+            </div>
+
+    </nav>
+    <!--carrossel banners-->
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="assests/oferta! (3).png" class="d-block w-100" style=" object-fit: cover;" alt="...">
+            </div>
+            <div class="carousel-item ">
+                <img src="assests/Imagem do WhatsApp de 2025-03-24 à(s) 13.23.33_7667e363.jpg" class="d-block w-100"
+                    style="object-fit: cover;" alt="...">
+            </div>
+            <div class="carousel-item ">
+                <img src="assests/oferta! (4).png" class="d-block w-100" style="object-fit: cover;" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <header class=" py-5 text-center mt-1" style="color: rgb(23, 60, 136); background-color: whitesmoke;">
+        <div class="container">
+            <h1 class="display-4">Alugue seu carro com conforto e segurança</h1>
+            <p class="lead text-black">Escolha entre diversas opções de veículos e aproveite a melhor experiência em
+                aluguel de
+                carros.</p>
+        </div>
+    </header>
+
+    <!-- Frota -->
+    <section class="container py-5">
+        <div class="text-center mt-3">
+            <h2 class=" display-5" style="color: rgb(23, 60, 136);">Conheça nossa Frota:</h2>
+            <p class="display-8 mb-4">Encontre as melhores opções para alugar e aproveitar com facilidade!</p>
+        </div>
+        <div id="carroselVeiculos" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <div class="row justify-content-center">
+                        <!-- Card 1 -->
+                        <div class="col-md-4 py-2">
+                            <div class="zoom card text-white position-relative overflow-hidden">
+                                <div class="card-img"
+                                    style="background: url('https://www.fiat.com.br/content/dam/fiat/nova-home/carrossel/mobi.webp') center/cover; height: 200px; transition: 0.3s;">
+                                </div>
+                                <div class="card-body text-center">
+                                    <h5 class="card-title text-dark">Compacto</h5>
+                                    <p class="card-text text-muted">A partir de R$ 113/dia</p>
+                                </div>
+                                <div class=" card-overlay d-flex flex-column align-items-center justify-content-center">
+                                    <h5 class="card-title text-dark">Compacto</h5>
+                                    <p class="mx-4 card-text text-white">Economia e agilidade no trânsito urbano.
+                                        Perfeito para o dia a dia, com baixo custo</p>
+                                    <a href="#" class="btn btn-secondary w-50">Ver disponíveis</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="col-md-4 py-2">
+                            <div class="zoom card text-white position-relative overflow-hidden">
+                                <div class="card-img"
+                                    style="background: url('https://www.fiat.com.br/content/dam/fiat/hibridos_02/carrossel-de-carros/pulse-hybrid.webp') center/cover; height: 200px; transition: 0.3s;">
+                                </div>
+                                <div class="card-body text-center">
+                                    <h5 class="card-title text-dark">SUV</h5>
+                                    <p class="card-text text-muted">A partir de R$ 185/dia</p>
+                                </div>
+                                <div class=" card-overlay d-flex flex-column align-items-center justify-content-center">
+                                    <h5 class="card-title text-dark">SUV</h5>
+                                    <p class="mx-4 card-text text-white">Conforto, espaço e desempenho. Ideal para
+                                        aventuras e viagens em família, com robustez e segurança.</p>
+                                    <a href="#" class="btn btn-secondary w-50">Ver disponíveis</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="col-md-4 py-2">
+                            <div class="zoom card text-white position-relative overflow-hidden">
+                                <div class="card-img"
+                                    style="background: url('https://media.vw.mediaservice.avp.tech/media/fast/H4sIAAAAAAAA_y2Uu84dtxGAjyXINlLYsA3DcG8cBBCQIfd-igNBsrsggYpALlT8GO5yyT3k3jhc7n-28gPpIfwEfgE3eYFUadIY8PyBqg-c287O7cN_Ti-2cHr-_v2bv__x_bfG_F4_O50el9Pp9AnLn71_8-G_3_3v08__9e-P4k9fnV7ELaj5EzZ5--wvw4hGw23R5svTZyw6PT-dPvuF8evT4_TFF1vwCwYc_9ZptZmv_qoa0fVCY5d1F8wy1apK5K1usl5r2WKVi6pta918fTq9-A29h64a5x7zog_zFJcW1FEU6i5pClQ7yERWwg8xDMbo8DCGB7tIkMXLeq1XKKuX-x0QNy0QUOHWCUaQC790J-MO2NvNSEAzFnsAtEk-mQyq2HpAp6SuAafYHAaQdHVvGUYjm5Av6cYIZVgZd-FYGFE-MrbusrPDRthwlD1VrgCFVrrEiDdpGUkeBErNVd-DMm66C1BeKdkxtJv4Nat8vDF2SRJUIInsEFGkG7RdqFeE1mJmBSOsNwntnjJOvtND3iN0vZU3xeAv5IxkRAG6nXUvQD81IDD2S6pAD7aOI8PXYwl6sfVjBpqGemdLou3SQo-d4Ji9tkUoGFvFJegNJS-ht3vimL3HyisGXYYS-jBkiXVhli0jUW3Y5KCe-2C6Md9LMHpqjAHjrLhbRvKCheMcswrM1BdbDWYJ-VYwqBoFmIBNZGFQFy0ZqcQGDC1GIlh0xVEyfL7UjDhwglalarFg9d6wuzVdyWW1rJkkY6ymnUH5dIB16FrW0d4MEYZJXUYNQ6DCV-AwuEYxaOUWO_UouS7OH-Jeg5ttvrLJnMqjBxdGebDuqVUFOMKSYzraHEpwm6kcMaxz_DqU8wI8tiXH9MrmBsFr9MIzfEMZY5Kcp9ch5xb7ARuuoJ9DvTAC8rYwEo8ReNJNYD-irC3B76FZJYxIlc5h7PFCAsbB5R0LndZjxtiaowAu9VgqGKnHvYAJU70KmPjrERnU7BbmibMRsOBoeKsWZYslg4AoJ8_oitIy5mZzjO1yQwg8YIeE0LmafzPoYchyhk_c96CD5FULFIXiKJTytYOw9RPXjFAVjznDVGvG2ARZIBWaZIA0rgPrjLssFyCL-aEYQ8ajQXbM2xpoUFNBDJ3zRJLXdaiAJqz9E2zDy_XxXNA8lY8cegkrl5WWrX7SkS1cCxT77DYxOFsOti_ZhozQ8E7TTs3EwfbjsmigYxM8PdGlgjOLi1eFhBj6koscKRU4Qny6ORnEpNckIO6bJIR4X6RWsGnMeD43Y4VoISknYwZpppUnOcV0GQbYh7Ryw3eiwvSw79jw1B39KGIHh0u5KuAgEuF4pac08GUc9RSv735--PHHd9nDm9l3533oor3KSybOVg_GxuulEmf0i8VrDJs-tzjqgNfX795mPz28fsgehJBnnPiix2Ge6PrPJ6czRa3DMBmcjNdXWZ7HudM-6DQQW13_8VaejZ8V8lDuTt9Jr5ueWn3NzqOO2PFNTDr83zT75jl_609YqIwhcgYAAA.webp?width=648') center/cover; height: 200px; transition: 0.3s;">
+                                </div>
+                                <div class="card-body text-center">
+                                    <h5 class="card-title text-dark">Sedan</h5>
+                                    <p class="card-text text-muted">A partir de R$ 170/dia</p>
+                                </div>
+                                <div class=" card-overlay d-flex flex-column align-items-center justify-content-center">
+                                    <h5 class="card-title text-dark">Sedan</h5>
+                                    <p class="mx-4 card-text text-white">Estilo e conforto. Espaço amplo e uma direção
+                                        suave, ideal para viagens e uso diário.</p>
+                                    <a href="#" class="btn btn-secondary w-50">Ver disponíveis</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+                <!-- Slide 2 (com mais 3 cards) -->
+                <div class="carousel-item ">
+                    <div class="row justify-content-center">
+                        <!-- Card 1 -->
+                        <div class="col-md-4 py-2">
+                            <div class="zoom card text-white position-relative overflow-hidden">
+                                <div class="card-img"
+                                    style="background: url('https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-2545xM4RIyFnbm9Mb3AgyyIJrjG0suyJRBODlsrjGpuaprQbhSIqppglBg3RJnl384MlficYiGHqoQxYLW7%25f3tiJ0PCJirQbLDWcQW7%251uSRkqoQh47wMvcYi9S%25rfMb3islBglUbQqcRScHJDYMbnMdoiKyJGy53sKrQ%25r9RKYW8zWubtJqogqaJ2al3ilUjd5cRScH753MbnMd08YyJGy5iubrQ%25r9SbFW8zWunJEqogqaGCel3ilU%25H5cRScHzj8MbnMdgsYyJGy5iAErQ%25r9sEGW8zWuKG%25qogqaD%25Fl3ilUCb0cRScH488MbnMdezOyJGy5QSKrQ%25r98RnW8zWuob9qogqa3Jnl3ilUR%250cRScHbz1MbnMdJWYyJGy5Q4ErQ%25r99oUW8zWuubGqogqaY%254l3ilUE45cRScHF81MbnMdjo1yJGy57zprQ%25r90tHW8zWuBjbqogqaYM7l3ilUEywcRScHFr2MbnMdjfAyJGy5sRKrQ%25r9KBFW8JYHltW7%25ZnjTW8JuzM8nq0z6Fboy6oEd82') center/cover; height: 200px; transition: 0.3s;">
+                                </div>
+                                <div class="card-body text-center">
+                                    <h5 class="card-title text-dark">Premium</h5>
+                                    <p class="card-text text-muted">A partir de R$ 407/dia</p>
+                                </div>
+                                <div class=" card-overlay d-flex flex-column align-items-center justify-content-center">
+                                    <h5 class="card-title text-dark">Premium</h5>
+                                    <p class="mx-4 card-text text-white">Luxo, sofisticação e desempenho superior. Para
+                                        quem busca uma experiência de direção exclusiva e refinada.</p>
+                                    <a href="#" class="btn btn-secondary w-50">Ver disponíveis</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="col-md-4 py-2">
+                            <div class="zoom card text-white position-relative overflow-hidden">
+                                <div class="card-img"
+                                    style="background: url('https://www.fiat.com.br/content/dam/fiat/nova-home/carrossel/toro.webp') center/cover; height: 200px; transition: 0.3s;">
+                                </div>
+                                <div class="card-body text-center">
+                                    <h5 class="card-title text-dark">Pickup</h5>
+                                    <p class="card-text text-muted">A partir de R$ 198/dia</p>
+                                </div>
+                                <div class=" card-overlay d-flex flex-column align-items-center justify-content-center">
+                                    <h5 class="card-title text-dark">Pickup</h5>
+                                    <p class="mx-4 card-text text-white">Veículos robustos, ideais para transporte de
+                                        carga e viagens em terrenos difíceis, combinando potência e praticidade.</p>
+                                    <a href="#" class="btn btn-secondary w-50">Ver disponíveis</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="col-md-4 py-2">
+                            <div class="zoom card text-white position-relative overflow-hidden">
+                                <div class="card-img"
+                                    style="background: url('https://www.fiat.com.br/content/dam/fiat/nova-home/carrossel/fiorino.webp') center/cover; height: 200px; transition: 0.3s;">
+                                </div>
+                                <div class="card-body text-center">
+                                    <h5 class="card-title text-dark">Utilitário</h5>
+                                    <p class="card-text text-muted">A partir de R$ 210/dia</p>
+                                </div>
+                                <div class=" card-overlay d-flex flex-column align-items-center justify-content-center">
+                                    <h5 class="card-title text-dark">Utilitário</h5>
+                                    <p class="mx-4 card-text text-white">Modelos versáteis e econômicos, perfeitos para
+                                        o uso diário e com ampla capacidade de carga, adequados para diversas
+                                        necessidades comerciais.</p>
+                                    <a href="#" class="btn btn-secondary w-50">Ver disponíveis</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+                <!-- Controles do Carrossel -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#carroselVeiculos"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carroselVeiculos"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Próximo</span>
+                </button>
+            </div>
+
+
+
+
+        </div>
+    </section>
+
+
+    <footer class="bg-dark text-white text-center py-3 ">
+        <p>© 2025 LWcar - Todos os direitos reservados</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Função para pegar parâmetro da URL
+        function getParametro(nome) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(nome);
+        }
+
+        const nomeUsuario = getParametro("nome");
+
+        if (nomeUsuario) {
+            // Salva no localStorage para manter o login na navegação
+            localStorage.setItem("usuarioLogado", nomeUsuario);
+        }
+    </script>
+<script src="Filtro.js"></script>
+
+
+</body>
+
+</html>

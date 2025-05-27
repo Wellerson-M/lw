@@ -1,0 +1,126 @@
+body {
+    font-family: sans-serif;
+}
+
+.navbar-nav .nav-item:hover .dropdown-menu {
+    display: block;
+}
+
+.nav-item:hover {
+
+    background-color: rgb(47, 73, 129);
+    /* Cor de fundo ao passar o mouse */
+    border-radius: 30%;
+    transition: background 0.2s ease-in-out;
+}
+
+/* Faz a imagem escurecer ao passar o mouse */
+.card:hover .card-img {
+    filter: brightness(50%);
+}
+
+/* Estiliza o overlay invisível */
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.zoom {
+    max-width: 100%;
+    -moz-transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+
+}
+
+.zoom:hover {
+    -moz-transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    transform: scale(1.01);
+
+}
+
+/* Faz o overlay aparecer ao passar o mouse */
+.card:hover .card-overlay {
+    opacity: 1;
+}
+
+/* Personaliza a cor de fundo e as bordas do dropdown */
+.dropdown-menu {
+    background-color: #fff;
+    /* Fundo branco */
+    border-radius: 8px;
+    /* Bordas arredondadas */
+    border: 1px solid #ccc;
+    /* Borda sutil */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra para destacar */
+}
+
+/* Muda a cor do texto dos itens do dropdown */
+.dropdown-item {
+    color: #333;
+    /* Cor do texto padrão */
+    padding: 10px 15px;
+    /* Ajuste de espaçamento */
+    transition: background 0.3s ease-in-out;
+}
+
+/* Efeito ao passar o mouse nos itens */
+.dropdown-item:hover {
+    background-color: rgb(23, 60, 136);
+    /* Cor de fundo ao passar o mouse */
+    color: white;
+    /* Texto branco para contraste */
+}
+
+.btn-style {
+    color: white;
+    background-color: rgb(23, 60, 136);
+    transition: background 0.15s ease-in-out;
+}
+
+.btn-style:hover {
+    padding: 1.5%;
+    /* Ajuste de espaçamento */
+    background-color: rgb(29, 53, 105);
+    /* Cor de fundo ao passar o mouse */
+}
+
+#esquerda {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.car-img {
+    height: 190px;         /* Altura fixa */
+    object-fit: cover;     /* Garante que a imagem preencha o espaço proporcionalmente */
+    width: 100%;           /* Ocupa toda a largura do card */
+  }
+
+  .btn-veiculos{
+     
+        color: white;
+        background-color: rgb(23, 60, 136);
+        transition: background 0.15s ease-in-out;
+    }
+    
+    .btn-veiculos:hover {
+        
+        /* Ajuste de espaçamento */
+        background-color: rgb(29, 53, 105);
+        /* Cor de fundo ao passar o mouse */
+        opacity: 45%;
+    }
+  
+  
+
+  

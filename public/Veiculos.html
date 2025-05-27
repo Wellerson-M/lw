@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aluguel de Carros</title>
+    <link rel="icon" href="assests/Logo-LW.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+    body {
+        font-family:sans-serif;
+    }
+    .card{
+        border-color: rgb(23, 60, 136);
+    }
+</style>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark mb-1 fs-6" style="background-color: rgb(40, 79, 158);">
+  <div class="container">
+      <a class="navbar-brand" href="Index.html"><img src="assests/Logo-LW.png" width="80px" height="80px"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarNav">
+          <ul class="navbar-nav  px-5">
+              <li class="nav-item"><a class="nav-link text-white" href="Index.html">Início</a></li>
+              <li class="nav-item"><a class="nav-link text-white" href="Reserva.html">Reserva</a></li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle text-white" href="#" role="button"
+                      data-bs-toggle="dropdown">Veículos</a>
+                  <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="Veiculos.html?categoria=compacto">Compactos</a></li>
+                      <li><a class="dropdown-item" href="Veiculos.html?categoria=sedan">Sedans</a></li>
+                      <li><a class="dropdown-item" href="Veiculos.html?categoria=suv">SUVs</a></li>
+                      <li><a class="dropdown-item" href="Veiculos.html?categoria=pickup">Pickup</a></li>
+                      <li><a class="dropdown-item" href="Veiculos.html?categoria=utilitario">Utilitário</a></li>
+
+                      <li><a class="dropdown-item" href="Veiculos.html">Todos os veículos</a></li>
+                  </ul>
+              </li>
+          </ul>
+          
+          
+              <form class="d-flex" role="search" action="Veiculos.html" method="GET" style="width: 40%;">
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-search" viewBox="0 0 16 16">
+                                    <path
+                                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                </svg>
+                            </span>
+                            <input type="text" name="busca" class="form-control" placeholder="Buscar veículo">
+                        </div>
+                    </form>
+          
+          
+          <ul class="navbar-nav ms-auto login">
+              <li class="text-white d-flex align-items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                      class="bi bi-person" viewBox="0 0 16 16">
+                      <path
+                          d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
+                  </svg>
+              </li>
+              <li class="nav-item">
+                  <a href="http://localhost:3000/login.html" class="m-2 nav-link text-white">Entrar</a>
+              </li>
+              <li class="nav-item">
+                  <a href="http://localhost:3000/cadastro.html" class="m-2 nav-link text-white">Criar conta</a>
+              </li>
+          </ul>
+      
+
+      </div>
+
+</nav>
+
+<!-- Conteúdo -->
+<div class="container my-5">
+  <h2 class="text-center mb-4">Veículos Disponíveis</h2>
+  <div class="mb-4 text-center">
+    <button class="btn btn-veiculos btn-outline-secondary filter-btn" data-filter="all">Todos</button>
+    <button class="btn btn-veiculos btn-outline-secondary filter-btn" data-filter="compacto">Compacto</button>
+    <button class="btn btn-veiculos btn-outline-secondary filter-btn" data-filter="sedan">Sedan</button>
+    <button class="btn btn-veiculos btn-outline-secondary filter-btn" data-filter="SUV">SUV</button>
+    <button class="btn btn-veiculos btn-outline-secondary filter-btn" data-filter="pickup">Pickup</button>
+    <button class="btn btn-veiculos btn-outline-secondary filter-btn" data-filter="utilitario">Utilitário</button>
+  </div>
+  
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    
+    <!-- Card 1 -->
+    <div class="col car-card compacto">
+      <div class="card h-100">
+        <img src="https://www.fiat.com.br/content/dam/fiat/nova-home/carrossel/argo-2026.webp" class="card-img-top car-img" alt="Carro 1">
+        <div class="card-body">
+          <h5 class="card-title">Fiat Argo 1.0</h5>
+          <p class="card-text">Manual • Ar Condicionado • 5 lugares</p>
+          <p class="text-success">R$ 89,90 / diária</p>
+          <a href="detalhes.html?id=1" class="btn btn-primary">Ver detalhes</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="col car-card compacto">
+      <div class="card h-100">
+        <img id="esquerda" src="https://www.hyundai.com.br/content/dam/hmb/header/vehicles/lateral_HB20_PlatinumPlus_PrataBrisk_2022.avif" class="card-img-top car-img" alt="Carro 2">
+        <div class="card-body">
+          <h5 class="card-title">Hyundai HB20</h5>
+          <p class="card-text">Manual • Ar Condicionado • 5 lugares</p>
+          <p class="text-success">R$ 119,90 / diária</p>
+          <a href="detalhes.html?id=2" class="btn btn-primary">Ver detalhes</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="col car-card compacto">
+      <div class="card h-150">
+        <img id="esquerda" src="https://www.renault.com.br/agg/vn/unique/grade_carrousel_main_1_medium/grade_carrousel_1.png?uri=https%3A%2F%2Fbr.co.rplug.renault.com%2Fproduct%2Fmodel%2FBB1%2Fkwid%2Fc%2FA-OV369-ENS_0MDL2P1SERIELIM2_-TEKNG" class="card-img-top car-img car-img-pequena" alt="Carro 3">
+        <div class="card-body">
+          <h5 class="card-title">Renault Kwid</h5>
+          <p class="card-text">Manual • Ar Condicionado • 5 lugares</p>
+          <p class="text-success">R$ 139,90 / diária</p>
+          <a href="detalhes.html?id=3" class="btn btn-primary">Ver detalhes</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Adicione mais cards conforme necessário -->
+
+    <!-- Card 1 -->
+    <div class="col car-card sedan">
+      <div class="card h-100">
+        <img src="https://www.chevrolet.com.br/bypass/gmccontenthub/chevrolet/brasil/colorizer_onix_plus/images/colorizer/chevrolet-onix-plus-cinza-drake-3-4-frente.png" class="card-img-top car-img" alt="Carro 1">
+        <div class="card-body">
+          <h5 class="card-title">Chevrolet Onix Plus 1.0 Turbo</h5>
+          <p class="card-text">Manual • Ar Condicionado • 5 lugares</p>
+          <p class="text-success">R$ 89,90 / diária</p>
+          <a href="detalhes.html?id=1" class="btn btn-primary">Ver detalhes</a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Card 1 -->
+    <div class="col car-card sedan">
+      <div class="card h-100">
+        <img src="https://cronos.fiat.com.br//asset/versions/359AHV1/978.webp" class="card-img-top car-img" alt="Carro 1">
+        <div class="card-body">
+          <h5 class="card-title">Fiat Cronos 1.3 </h5>
+          <p class="card-text">Manual • Ar Condicionado • 5 lugares</p>
+          <p class="text-success">R$ 89,90 / diária</p>
+          <a href="detalhes.html?id=1" class="btn btn-primary">Ver detalhes</a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Card 1 -->
+    <div class="col car-card sedan">
+      <div class="card h-100">
+        <img src="https://image1.mobiauto.com.br/images/api/images/v1.0/310413317/transform/fl_progressive,f_webp,q_85,w_959" class="card-img-top car-img" alt="Carro 1">
+        <div class="card-body">
+          <h5 class="card-title">Toyota Corolla 2.0</h5>
+          <p class="card-text">Altomático • Ar Condicionado • 5 lugares</p>
+          <p class="text-success">R$ 89,90 / diária</p>
+          <a href="detalhes.html?id=1" class="btn btn-primary">Ver detalhes</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 1 -->
+    <div class="col car-card SUV">
+      <div class="card h-100">
+        <img src="https://media.vw.mediaservice.avp.tech/media/fast/H4sIAAAAAAAA_y2Uu64ktxGGR7vYlaFAgmQYgnJjIGABFdn3DgaCVoYSwcIGwirY4ICc5qWH7BvJ7p7TkR5oH0Iv4UiJXsCREycG_B9how9V_Jus_qvI9_8-vVjD6fm7d69__N9XfzPm9_rZ6XSfT6fTR8g_e_f6_X--_O_Lv_z8x4f0yx9OL9Ia5PQRJG-efdIPwii6zcp8dvoYqdPz0-njX4HfnoLTp5-uwc8iiOGbTsnVfP51dy15lRW11qUuVJ13OtN1VbZc8zyXWouqzVUtyi9Opxf_Et5TVw2TFnmhwzSm-UpS57PMWRxDLBllLKvo7yn0xqjwMIQHO3PixSu2sIXK6pUUJMSqmkBCirVjQOAzkqrLrhoIbEZS29VwEmYodijtxp-UvSxWSJzkqiYxpuYwJKKq7lfAKAFJ9GW8AaEMC_DIHJJJ8Duwdu2OD9YoWmDfKpeRFJa7DUg3boGNH5GknCotSRo3PjKSXkreAcqNiKadR04yRC6gTIJtN5J71yZG1y7Ui6CrFZlFZMNy43Tdt6wrqBMhj4w61edaUKctv0lgM6wkdZ2UZqQ6zVQA9nbLSfW2HCLg6wGS2dZ3Tir29Q5ljGsrSYuO6Rtp6UouSCtbhAJYK5GRNnHzOWm7b9hae1F5SHxs-5J06LONAxO_AkfUTJDphhxbGzU2xpBxlj0-YfOsJTNMCW01oy7Wmswc8pWTCaJJSAbZKkRxNijCClccBZB6tMPKrUJvrdqbgZNFaqyAoRqR7GM-HmSdaIUkG_emT9SPsh0U4Cv42Y-pGDn1IRY-IycUcxoIrjFAXNBbJ-8cVTt_sMea3GTzpQK28oAyDPzA2lOrCnJxdSjJraZyV8A6x8kd0vknpBzFe3EtsaeXNjeIrvOyIFLCMw_4JlbAyFGSVyFHi_0UakyrDyI78EHYMD_kI6b7BsTsWpJPsVWS_B6apaZBxEoxGrSoMRqDU2rIgLWBZ_B4KCUNUYu9oFFsNU4fcWyyQGx2QdOIMhjNYjC4VbO0BU4PQvCxA3CTR2BqVges7U1QwGQdnELnavxYUP3CC8BvaHhQgZuWQkxMZsCWL9hl1SM8i0IW9xww1cKBlUVLUYZmMxSVWHqsGdfOLUUr8kMCQ36tKfZyZB2gctgae1vA8uhVHSoAFjiKo6g9otE2uFwfXo04jeUdJ8xhga1xXuuntWCrHoi2QMdi9IVElLpaloDO4GBM-JNEcYsL7maEyfcnxGZsKB4rw5wltxV9Rmn2suCUgi47IG6FmCmtiuGupH3lEcrHmaNVq7EM9mzS8ZTRNsUFo7GlrT3utMdYGE37LhpM3SFDhq4cemAJcFsuCzpiZOH4Vo1bjwdyUGO6vP3l4fvv32YPryffnfe-S_bC24ydreqNTZe2YmfhZysuKazqfBWDCuLy3ds32T8evnvIHhjjZzHiYU_9NMbLT08fnWNSKvSjEaPx6sLL8zB1yge19RGqyz_f8LPxkxSYzd2px6iWVY1XdcnOg0qiw5u4qfCnNPvrc5z1f9v0JcJ5BgAA.webp?width=648" class="card-img-top car-img" alt="Carro 1">
+        <div class="card-body">
+          <h5 class="card-title">Volkswagen T-Cross 1.0 TSI</h5>
+          <p class="card-text">Automático • Ar Condicionado • 5 lugares</p>
+          <p class="text-success">R$ 89,90 / diária</p>
+          <a href="detalhes.html?id=1" class="btn btn-primary">Ver detalhes</a>
+        </div>
+      </div>
+    </div>  
+
+    <!-- Card 1 -->
+    <div class="col car-card SUV">
+      <div class="card h-100">
+        <img id="esquerda" src="https://www.hyundai.com.br/content/dam/hmb/header/vehicles/creta_ultimate_7-8_cinza-shadow.webp" class="card-img-top car-img" alt="Carro 1">
+        <div class="card-body">
+          <h5 class="card-title">Hyundai Creta 1.6</h5>
+          <p class="card-text">Automático • Ar Condicionado • 5 lugares</p>
+          <p class="text-success">R$ 89,90 / diária</p>
+          <a href="detalhes.html?id=1" class="btn btn-primary">Ver detalhes</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 1 -->
+    <div class="col car-card SUV">
+      <div class="card h-100">
+        <img src="https://www.webmotors.com.br/imagens/prod/379718/JEEP_RENEGADE_1.3_T270_TURBO_FLEX_SAHARA_AT6_37971816203558753.webp?s=fill&w=170&h=125&t=true" class="card-img-top car-img" alt="Carro 1">
+        <div class="card-body">
+          <h5 class="card-title">Jeep Renegade 1.3 Turbo Flex</h5>
+          <p class="card-text">Automático • Ar Condicionado • 5 lugares</p>
+          <p class="text-success">R$ 89,90 / diária</p>
+          <a href="detalhes.html?id=1" class="btn btn-primary">Ver detalhes</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 1 -->
+    <div class="col car-card premium">
+      <div class="card h-100">
+        <img src="https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-7331c9Nv2Z7d5yKlHS9jBqH7TAJei1ZIjAJpUr7G19mRi9lZyaBNODXYunWqecQ53f0%25lif2p8YYCj0HWpsPFe0SwJeiUS%25JxvQy2sC4v6jQ%25QBS2YDafHJEjmqn1%25FbDyLOEfm%25qTJIs1SfL3uBrEVcJdSeZG4NuzVMRpsFSkNh56qyVA0ogYLcNF4HvmFo0Kc%252Nud4Wxfj0SKcP81D4PkxbUEqcA889GsLxdNUiprJ8OWGw6ZuUlmptYRSGjc67m5Vp3%25YCygN6WYmlTv0JkCyX324uXtTQdjcSUk3azDxVBDdnkq8NenzOALU03CkIFJGbYQABKup9g1FeWS6iv2KMPVYwi0WhbNmtQrPo90y7r0bHi4TrCe9%25wc3ZmiiftxdRMMw178z5JttECUkgdS7sYlvAEKCpLjNkMPoxhXwt7b4gkVe7ncGs5Tn672ya8qIbJ0ZFi4LBMhO2kcGlV7GqOjroWhcX826njl6JmADGbH8cLV04MOhFUlmD0agdI64XM6yvLB9lrE46hiEKM4Kt2yUGCpLCe8oGlZyCFnlwXYu3W" class="card-img-top car-img" alt="Carro 1">
+        <div class="card-body">
+          <h5 class="card-title">BMW 320i</h5>
+          <p class="card-text">Automático • A/C Dual Zone • 5 lugares</p>
+          <p class="text-success">R$ 89,90 / diária</p>
+          <a href="detalhes.html?id=1" class="btn btn-primary">Ver detalhes</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 1 -->
+    <div class="col car-card premium">
+      <div class="card h-100">
+        <img id="esquerda" src="https://assets.oneweb.mercedes-benz.com/iris/iris.png?COSY-EU-100-1713d0VXqaSgqtyO67PobzIr3eWsrrCsdRRzwQZgk4ZbMw3SGtle9tsd2HdcUfp8qXGEubmJ0l3ItOB2NQnbApjtwI5uVQDQC31MjkzNwzwm7jZeohKVFsW%25vq9JTyLRzLyYax7NxrH1eJdn8ws8WoiZUMXM4FGTjTg9ovn6PDC%25qSeWzy3tsd7oTcUfi%25qXGE4nXJ0lgDfOB2PSObApeIyI5usQJQC3UkTkzNGLnm7j0ajhKVBHE%25vq8cXyr%25kWfDYQJ0l4DlOB2iMwbAp0ioI5uBeYQC3D0ZkzN7Pbm7jKeDhKVvsL%25vqLUcyLRaARYaBEUVmMDZfrE8qYOwjxXr1RjiiF2MpwQ1pnIu2fzfXRXPq0Agjeq89ip1R27rvMwFLlFGX3=&BKGND=9&IMGT=W27&POV=BE040&width=820&uni=c&crop=100,186,1820,942&im=Trim&fuzz=0.5&width=1000" class="card-img-top car-img" alt="Carro 1">
+        <div class="card-body">
+          <h5 class="card-title">Mercedes-Benz Classe C 200</h5>
+          <p class="card-text">Automático • A/C Dual Zone • 5 lugares</p>
+          <p class="text-success">R$ 89,90 / diária</p>
+          <a href="detalhes.html?id=1" class="btn btn-primary">Ver detalhes</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 1 -->
+    <div class="col car-card premium">
+      <div class="card h-100">
+        <img src="https://mediaservice.audi.com/media/fast/H4sIAAAAAAAA_41X9z_WX9g_3Ld5REbJDNmb9LWSbCJkZW_ZO25ly0wJZbuN7BGVESLjNkoiM5FZ3Qi3EV-b5_N9Xs8f8Jwfrtfrcz7ndZ1zrut6v9_XqV4HJAF-AGVhoax9wnTB2XlamhiAIB8AABEyT2yhXP2XcZ-U3Gj-_6apDQDJ_QA_e28iZIk-MaWrp52zk5ibj5MzDRGlnZSIU9B9ET8fKTLkbz7cpmoirBiVUY2oLUm1-Ibt_Cm2Jgewiv3kjKHm6PJerYn8TA1DVmVrwU8Ai39rJJaZGRJbC2_Ynk-hkFUTOlkBsAPlbjINWFsoP61NVnBH2chxRd8DUFOQgFNk6wyVIBgm8-ft5SSacZgBmNiw2nfYtzhtJZtlkemxNd0yyUoMILE4n9fsQk8HZOhS69YvtjEeDZ8CMIv6iPiZ5xgh8lQK9TQlr_5S0uAFAAOP0-ax2l_q-sdy9a88Lyjj9ZzVBDCjet286u979qIUv6YMSsZ1nbX9D8ham8yhX-OZIru6BTvrFrel22fb8gB8SNXT-6diXuYSnw5QJMTN2Ul8TgXw5GCtMQm3IKPOnCy0QZh-r3fv71cAVRm_pS2FNfVIfXnVdJFiS67jdLALwDrB7JUyiz2tONEuFAv_E8XX-BgkZlH3nGzFHZMZsoXMnjNQEVsujglLAsgtHNfCFWE36pTeJ6KajMahghgTAJwjrmQe_m1ig1ZaI-IZuKDNZxmcDeBkVVv5KN056TTjRfpmpny2kU-dEMABXQYP7cEUN9Wr45FXWi8z8-TzqQBISeLVEBI0h_-6KdKYUzXHrME8EQJgzeuSlQMinLwF61XXEVOOMskg8mkAJc1fGal-XArashe9obazF-I744ncYrYwAXu8xCEm73jGdyCzEL-gixYG8BuKXFkypfOWK5urxIV_6uiHzGTnAaz4pL3RyBSGJ2E8zzNIe8KYqvZWFcCn7qGij1GMW79pC8ptfo93Si1_CQWQ-gcat7rCf-HZrkRctdKZJVV5EnLe-jmdV0_p3pNJxSQvvpo5_LjIva8FoBRtgehSnJu6QL42gWnEjSzt11cCgKL8rB51kV7iK2fzV2KzTcWLPMd8AHye2fHDUUbaqWUDexX7I0NEt3syBYkOb655xXhxy4ini_cXqYeEJ8FsmQC-PSznsYtZlVRtgxUvRi-K3CVqR87gdbAwwOzjvvmg1aUHKxgpbM6ARfL26jG-q9ngcvwjGauoS9mUJrveS0guKN_6RxCS7nOPUeD0Lz19ca7hcUg8gJtS12SnMTW96alT_JQwko0wUotU1HLLFqoX1fSOT304VKaZAVXd508LIM0Lj5XDGKlRFE5zpKefQCuftJEPIOpCqolK6yqz6pKnLlv8VsCJOvssgCoyZRK1TIoTa0V4EWKFQlYdu2o_AHUp4o_ggNuMlc3v_HNEGUav9YAAgIan8TFJjQlUj_Pp0v5dJrIGfaREAE5YL6GSl9DdH7pURMzb0RlRqF9I_Y4PWDL9DdyQcPTIX4Hu35fGRhtWAYw84-Tqa9PCUE01qLVGS5ycWP1Bsmk_cfNGo6k-HZveQgPmO33EmMyPKADzmBYDy93tulmM98ybNngNSx8PjSC188LHUUgMrVBudeT3iKzMhWqzuQhAJc3i55ivimGD5JGp1zQ4LASsTqsBdIle-nzkUTC80-jBHS0RW_dnew2JA7ZB3NPr2Pu7_KBJdmLht1HDab9CAMOI7j0cMHsQ42iYI7hpkPiiaNqSGbnbeX78es4NsxZHL555kfLSqPIihI0qUMNDnP_6SLZqVSYkYZT3eXTbECaYpXTsz-I6pS02MSeewVR7KFu7BgPo5nA32q__0L847Ftmu6B_U-2hEQeAu2t3kn95ySzmy0laNuzs3vJv3rIHUOQOelXmocRdtPChSOMjYwWv7YUyAAuv0PS1EUfc3asP87l_S9NxEqOB3CLmttZG7bVTc93rxpib5LYeAxctEb-h2N86FA-Uzl8li2rjHt0zNDRlRvgsieBOQ6XKJlpFEGleS2rElJV1mANoVoe1ufyw5Noo53rw2KVPUxZ8BGUA2Sm18NGtMjJVq5KKXNva7AtRFxUBjD67K1po0KHT4m1d-LQ3lr1ptiIcQFN2n9p0L2VRvG679UkzjziBhbISmcXeHI97m88pShkQZKKewuozR-YI4Bo-r0kavfmdJ90o0-2lkuCwYagDgHF21Az7xThf4YPAjsOVK3wZKRuHAJK3Df9UCcE5db8-mlOp-8devn7WCUABJQsTr-ILJg_Td6fNSBalFITSPgFoYlUl55FDW7eXnR6KUvONjSVdzgXwZhmNc4XaePYO00b7qBdqhTKOtATAygz5NpqCOPvySkxsooaAb64YyADwXIOqDOnL8Uad1P77BZ3cB26LAgiX8Fs86rrpomctmSWUH_XugJae_p0-gL81Ojgel0qy5nfO9RLjrlaX0HIjDI7T7FK3zcK9oFDK_ewjnPyeVEaODMAi-jc2k5T7tf-SvGm4N2dYJEL6HInkQ076VSEG9nHDy6tcykeMO6cltE8A7JJXkU0UEl5nehTm8TKC8qQhv1kQqQchAfKa60NExuaS_tc0yquLfipYAPi5tL-ot4JY1kLMR4HfmLvjrUt3P4ABAs_mDNreZXwbFmUZobPABFBzaSMYonV3OdmcJF106CUEMbEo3f71Fw_gGyBzvwrNrFFbaWP5M8SHqXEhbh_AahdNo4fagy043ArGwTV347sBNVJnq5X_ROwHk4TLN1jEX28WuMGvkZOF4K1NN0V9ppUMuxeie1xyYvYASj5GcDFAzHuTTtFdF3xx8GjUSZJM9CIFkKjHf0Ii1B0vDJzT0-YjNn0dR_wRzHu2PyMi3zXaU3wx1nQrdrdn8ZwYgGyGN2fDZsyFpk7nWp_gnLUH9FR5AHzgJ3ZuW1kkv30u_Tqz0zKqbMK2CuFUkQvHLqyRmQcSApvk1vKP0iVZogF0yPjzdr6apI-xAJo1N5Mwq_6MxQAo711L56t5KUv9i9jdihGM9XVNlTsAfj1R1dRdanqjexOtNbLMWP_veNgGgB-MKU1DSENBoAEX1rS0cXubdBrhydKoGudRZ8ZQY7vYsh3_OFuJvxcRti8yi7d_ZvOQvimrmUstRVdhopyLAtlN8WC6j5ad0_d7-LamTJsg5ym2FlEnmkqGqJfphRsSOZ_okjXbxct0kE5BY3ggQajdaIxrvyTjXctoLb6h8T2AVgoorGDXND68KRk3D3IqxpjaEGSlKRdrvFlbuu7kksGJXpkJFhopXgfQ1pAzVRFNr2z7uFGnOqZ099FTNWsAGR589Si1IV-zvd-tzPJ-1jlOT3wIwGGWC-GrdMYldXe0k6uaCrMiCuEmgqEUMuuzeM2IGvsUjtPzs1wRtcJ1AErb6FowcqnVsHIkMe17ubwmfMTaIB46UtjI3gWY78VrNK8mUo2ks4cEATgoE6OqfK3TLu6OGdulUp9xaZ0vSMx4BodqygNxlkS28wYLrPSm89ZdiM4zqDQPiZoHW_jyfRXfQStbBKpy7SJdUI_emXD48JPbqRI2tHr-CRF3xXoB9LWYIcGezyitephVX2Ft3W9uL_YDwFF-_x5sMN-ZHDbsO29jiV7qlEkkomRcdwnnr-TJMYV8fhdHGh1ZfJqJKORLq540RWqcFitZfQKvXIdp55olEl-1XfbD5fpnxrxqw8pWSokq3VIMMwCenq92n0qpsXkpUDBK57AcNzfjjtR6SIoCr_Wq1sozjpO1xwldZSTHm7IAGnlcYejxLSGWMlyzfy5hfPwgPLYbwVt3Nd8KgVONXJgm4WrlMj78qVoEghYRaWaK1F6zX57sWqhvuW5PFzW2AQwCGfi727XfxNspSmUzjpoCWpeTACz7SBLUHHzDe1J4Jlnf8gOqGPOfh6Q6BcYqJT9LI631lDOti_pFB7uImoYtkTmJsvWHvXt-VON2IIsOxWheR6rvs-fUjbzS4nZHHMeWSKVNGdUcooUKPxxZG2iOul8mHbHyhNwPQEcsIOxZHsXU3bA4e7lx-JE-W_htfNDfgxwAb-e5z9-3U17wNZLSUxZWdEjBAGcA0bZ3ZoYzBSkIkc7q-w5fgyuwqccIT_bbRAYFiUwIMv0V7iAtfU_C-g-S-TxlR7IJjJGKvZplTRTvELem9lQfwlwe1KUn2MuR3k18zTsXuR0ZdDwRTjX70JhJaqGjv3oRd4thkn8bv2GL8E4GKkc6I4raYBv7MRujg-NfGBtGMhTtEr_-985xbCEn_7qqrXiDwHGTAbI2TUV0i-as07vsC7-qNJmVnJY9goCMviqype7b_CLbu0QjueQYNt1CpLPZTMbhaFgFW36t5ga94c7crf7DgvhtNYz86suedyqDefepfp7FllPi5WsAR-Kjlz-0VG07-P-MER3ueFvwuqwRQH_mJwrvy930400_56owPBlZNipHtOUWPbpcTlF89EPBbUuaErxuyy7eDsCriflFbIFbDya0H-USriXhBhufowF0le5yjQnzUWb_EWnoXu_KQXQcjPQPPQk_hyrIHmxZFy_Fn3DYMlwafCGNsCfPqpZ_bZsypcaf9sRAm04uTXwpgs2V_YPP136rdeoIfeqWm7xWZO-BYPMZcNE1ke1OEj9ZPD_WeXrc6nSIqJPatmj20BH3R00p0vXQ3ml3XlsvPgDh7NnxFO2M-q-ZKqs32TV3ULfwiA7tyzNoaVtJCeU0H2lWUJ5bvvel_xkgQV5zxGOIQXUh5hwVYsjjwf_a_955noghqv7vG_0SBQBZBAAkBeC_QU0f4OfhY-dn5ynq5-Tv4-3l7xroRMsv_v8c9GglEy2j_wHNPbuGhQ4AAA?wid=1540" class="card-img-top car-img" alt="Carro 1">
+        <div class="card-body">
+          <h5 class="card-title">Audi A4 2.0 Turbo</h5>
+          <p class="card-text">Automático • A/C Tri-Zone • 5 lugares</p>
+          <p class="text-success">R$ 89,90 / diária</p>
+          <a href="detalhes.html?id=1" class="btn btn-primary">Ver detalhes</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 1 -->
+    <div class="col car-card pickup">
+      <div class="card h-100">
+        <img src="https://www.chevrolet.com.br/content/dam/chevrolet/south-america/brazil/portuguese/index/pickups-and-trucks/2025-s10/s10-landing/colorizer/hccinzamoss.png?imwidth=2400" class="card-img-top car-img" alt="Carro 1">
+        <div class="card-body">
+          <h5 class="card-title">Chevrolet S10 2.0 Turbo Diesel</h5>
+          <p class="card-text">Automático • Ar condicionado • 5 lugares</p>
+          <p class="text-success">R$ 89,90 / diária</p>
+          <a href="detalhes.html?id=1" class="btn btn-primary">Ver detalhes</a>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Card 1 -->
+    <div class="col car-card pickup">
+      <div class="card h-100">
+        <img src="https://strada.fiat.com.br/images/Versions/freedom/c3c3c3.webp" class="card-img-top car-img" alt="Carro 1">
+        <div class="card-body">
+          <h5 class="card-title">Fiat Strada 1.3 Flex</h5>
+          <p class="card-text">Manual • Ar condicionado • 5 lugares</p>
+          <p class="text-success">R$ 89,90 / diária</p>
+          <a href="detalhes.html?id=1" class="btn btn-primary">Ver detalhes</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 1 -->
+    <div class="col car-card utilitario">
+      <div class="card h-100">
+        <img src="https://www.fiat.com.br/content/dam/fiat/nova-home/carrossel/fiorino.webp" class="card-img-top car-img" alt="Carro 1">
+        <div class="card-body">
+          <h5 class="card-title">Fiat Fiorino 1.4</h5>
+          <p class="card-text">Automático • A/C Dual Zone • 5 lugares</p>
+          <p class="text-success">R$ 89,90 / diária</p>
+          <a href="detalhes.html?id=1" class="btn btn-primary">Ver detalhes</a>
+        </div>
+      </div>
+    </div>
+
+        <!-- Card 1 -->
+        <div class="col car-card utilitario">
+          <div class="card h-100">
+            <img src="https://www.fiat.com.br/content/dam/fiat/nova-home/carrossel/fiorino.webp" class="card-img-top car-img" alt="Carro 1">
+            <div class="card-body">
+              <h5 class="card-title">Fiat Fiorino 1.4</h5>
+              <p class="card-text">Automático • A/C Dual Zone • 5 lugares</p>
+              <p class="text-success">R$ 89,90 / diária</p>
+              <a href="detalhes.html?id=1" class="btn btn-primary">Ver detalhes</a>
+            </div>
+          </div>
+        </div>
+
+    
+    
+  </div>
+</div>
+
+<!-- Rodapé -->
+<footer class="bg-dark text-white text-center py-3 ">
+  <p>© 2025 LWcar - Todos os direitos reservados</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="Filtro.js"></script>
+
+
+</body>
+</html>

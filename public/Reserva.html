@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Detalhes da Reserva</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark mb-1" style="background-color: rgb(40, 79, 158);">
+    <div class="container">
+      <a class="navbar-brand" href="Index.html"><img src="/assests/Logo-LW.png" width="80px" height="80px"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarNav">
+        <ul class="navbar-nav  px-5">
+          <li class="nav-item"><a class="nav-link text-white" href="Index.html">Início</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="Reserva.html">Reserva</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">Veículos</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="Veiculos.html?categoria=compacto">Compactos</a></li>
+              <li><a class="dropdown-item" href="Veiculos.html?categoria=sedan">Sedans</a></li>
+              <li><a class="dropdown-item" href="Veiculos.html?categoria=suv">SUVs</a></li>
+              <li><a class="dropdown-item" href="Veiculos.html?categoria=pickup">Pickup</a></li>
+              <li><a class="dropdown-item" href="Veiculos.html?categoria=utilitario">Utilitário</a></li>
+              <li><a class="dropdown-item" href="Veiculos.html">Todos os veículos</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex" role="search" action="Veiculos.html" method="GET" style="width: 40%;">
+          <div class="input-group">
+            <span class="input-group-text">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-search" viewBox="0 0 16 16">
+                <path
+                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+              </svg>
+            </span>
+            <input type="text" name="busca" class="form-control" placeholder="Buscar veículo">
+          </div>
+        </form>
+        <ul class="navbar-nav ms-auto login">
+          <li class="text-white d-flex align-items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+              class="bi bi-person" viewBox="0 0 16 16">
+              <path
+                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
+            </svg>
+          </li>
+          <li class="nav-item">
+            <a href="/login.html" class="m-2 nav-link text-white">Entrar</a>
+          </li>
+          <li class="nav-item">
+            <a href="/cadastro.html" class="m-2 nav-link text-white">Criar conta</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="container my-5">
+    <h1>Detalhes da Reserva</h1>
+  </header>
+
+  <section class="container reserva">
+    <h2>Informações do Usuário</h2>
+    <p><strong>Nome:</strong> <span id="nome"></span></p>
+    <p><strong>Email:</strong> <span id="email"></span></p>
+    <p><strong>Telefone:</strong> <span id="telefone"></span></p>
+
+    <h2>Detalhes da Reserva</h2>
+    <p><strong>Carro Escolhido:</strong> <span id="modeloCarro"></span></p>
+    <p><strong>Data da Reserva:</strong> <span id="dataReserva"></span></p>
+    <p><strong>Duração (dias):</strong> <span id="duracaoReserva"></span></p>
+    <p><strong>Valor Total (R$):</strong> <span id="valorTotal"></span></p>
+  </section>
+
+  <div class="container my-4">
+    <a href="Veiculos.html" class="btn btn-primary">Voltar para a lista</a>
+  </div>
+
+  <footer class="bg-dark text-white text-center py-3">
+    <p>© 2025 LWcar - Todos os direitos reservados</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get('id');
+
+      if (!id) {
+        alert('ID da reserva não fornecido.');
+        return;
+      }
+
+      try {
+        const response = await fetch(`/api/reservas/${id}`);
+        if (response.ok) {
+          const reserva = await response.json();
+
+          document.getElementById('nomeUsuario').textContent = reserva.nome;
+          document.getElementById('emailUsuario').textContent = reserva.email;
+          document.getElementById('telefoneUsuario').textContent = reserva.telefone;
+          document.getElementById('modeloCarro').textContent = reserva.modeloCarro;
+          document.getElementById('dataReserva').textContent = reserva.dataRetirada;
+
+          const dataRetirada = new Date(reserva.dataRetirada);
+          const dataDevolucao = new Date(reserva.dataDevolucao);
+          const duracao = Math.ceil((dataDevolucao - dataRetirada) / (1000 * 60 * 60 * 24));
+          document.getElementById('duracaoReserva').textContent = duracao;
+
+          const valorTotal = duracao * 100; // Exemplo: R$ 100 por dia
+          document.getElementById('valorTotal').textContent = `R$ ${valorTotal.toFixed(2)}`;
+        } else {
+          alert('Reserva não encontrada.');
+        }
+      } catch (error) {
+        console.error('Erro:', error);
+        alert('Erro ao conectar com o servidor.');
+      }
+    });
+  </script>
+</body>
+</html>
