@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "modeloCarro": "Fiat Argo 2026",
+    "localRetirada": "Rua alasca, 185",
+    "dataRetirada": "2025-05-10",
+    "dataDevolucao": "2025-05-20"
+  },
+  {
+    "id": 2,
+    "modeloCarro": "Fiat Argo 2026",
+    "localRetirada": "jyrtjr",
+    "dataRetirada": "0056-03-05",
+    "dataDevolucao": "0053-03-05"
+  },
+  {
+    "id": 3,
+    "modeloCarro": "Fiat Argo 2026",
+    "localRetirada": "geerger",
+    "dataRetirada": "0033-03-04",
+    "dataDevolucao": "0043-03-04"
+  },
+  {
+    "id": 4,
+    "modeloCarro": "Fiat Argo 2026",
+    "localRetirada": "sthsh",
+    "dataRetirada": "2352-05-04",
+    "dataDevolucao": "0054-02-05"
+  },
+  {
+    "id": 5,
+    "modeloCarro": "Fiat Argo 2026",
+    "localRetirada": "rua jaragua",
+    "dataRetirada": "2004-11-03",
+    "dataDevolucao": "2004-11-06"
+  },
+  {
+    "id": 6,
+    "modeloCarro": "Fiat Argo 2026",
+    "localRetirada": "rua irani",
+    "dataRetirada": "2025-10-09",
+    "dataDevolucao": "2025-10-18"
+  },
+  {
+    "id": 7,
+    "modeloCarro": "Fiat Argo 2026",
+    "localRetirada": "shbfdgs",
+    "dataRetirada": "0056-04-06",
+    "dataDevolucao": "0646-04-05"
+  },
+  {
+    "id": 8,
+    "modeloCarro": "Fiat Argo 2026",
+    "localRetirada": "vfav",
+    "dataRetirada": "5345-03-04",
+    "dataDevolucao": "0553-03-04"
+  },
+  {
+    "id": 9,
+    "modeloCarro": "Fiat Argo 2026",
+    "localRetirada": "Rua alasca, 185",
+    "dataRetirada": "5456-06-06",
+    "dataDevolucao": "6456-04-05"
+  }
+]
